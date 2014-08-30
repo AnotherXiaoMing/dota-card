@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>map</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+var heartArray = [
+  "",
+  "*",
+  "*",
+];
+var data = [
+    {
+      name : "奥林匹斯之王",
+      icon : "zeus.jpg",
+      image : "zeus_large.jpg",
+      type : "智力",
+      attack : "远程",
+      red : 10,
+      blue : 8,
+      skill : [
+          "弧形闪电:魔耗3/距离2/间隔1。施法者会指定最多3个受伤目标，分别造成1点伤害。第一个目标必须在施法距离内，目标之间距离不超过1",
+          "雷击:魔耗3/距离3/间隔1。从天空召唤一道闪电对目标造成3点伤害",
+          "雷神之怒:魔耗4/距离无/间隔3。用闪电同时打击所有的非隐身的敌方，造成2点伤害"
+      ]
+    },
+    {
+      name : "水晶室女",
+      icon : "bingnv.jpg",
+      image : "bingnv.jpg",
+      type : "智力",
+      attack : "远程",
+      red : 10,
+      blue : 8,
+      skill : [
+          "冰封禁制:魔耗2/距离3/间隔1。目标不能移动和物理攻击,持续1回合，同时造成1伤害",
+          "辉煌光环:魔耗0/距离无/间隔0。所有友方单位回复1点魔法",
+          "极寒领域:魔耗4/距离无/间隔3。施法单位周围距离2以内的敌方单位受到2点伤害"
+      ]
+    },
+    {
+      name : "治疗药膏",
+      icon : "zhiliaoyaogao_icon.jpg",
+      image : "zhiliaoyaogao_icon.jpg",
+      type : "",
+      attack : "",
+      red : 1,
+      blue : 0,
+      skill : [
+          "回复指定单位1点体力"
+      ]
+    },
+    {
+      name : "净化药水",
+      icon : "jinghuayaoshui_icon.jpg",
+      image : "jinghuayaoshui_icon.jpg",
+      type : "",
+      attack : "",
+      red : 1,
+      blue : 0,
+      skill : [
+          "回复指定单位1点魔力"
+      ]
+    },
+     {
+      name : "火枪手",
+      icon : "huoqiang_icon.gif",
+      image : "huoqiang_icon.gif",
+      type : "敏捷",
+      attack : "远程",
+      red : 10,
+      blue : 8,
+      skill : [
+          "爆头:魔耗0/距离x/间隔0。当物理攻击目标是，目标需要判定，如果是红色牌将额外受到一点伤害",
+          "瞄准:魔耗0/距离x/间隔0。火枪手的攻击距离比别人多1，为3。",
+          "暗杀:魔耗4/距离4/间隔3。火枪手能远距离暗杀目标,造成3点伤害"
+      ]
+    },
+    {
+      name : "幻影刺客",
+      icon : "huanyingcike_icon.gif",
+      image : "huanyingcike_icon.gif",
+      type : "敏捷",
+      attack : "进程",
+      red : 10,
+      blue : 8,
+      skill : [
+          "闪烁突袭:魔耗2/距离3/间隔1。瞬间移动到敌方单位相同位置，并且额外增加一次物理攻击",
+          "模糊:魔耗0/距离x/间隔0。受到物理攻击时，需要判定如果为红桃表示闪避此次攻击",
+          "恩赐解脱:魔耗0/距离0/间隔0。发出物理攻击，判定如果为黑色1~2将造成4倍伤害"
+      ]
+    },
+];
+$(document).ready(function (){
+    for (var i = 0; i < data.length; ++i) {
+        var item = data[i];
+        var skill = "";
+        for (var sk in item.skill) {
+            if (skill) {
+                skill += '<br/>';
+            }
+            skill += '◆' + item.skill[sk];
+        }
+         
+        var html = '<div class="col-xs-6 col-md-3">'	
+            + '<a href="#" class="thumbnail">'
+            + '<img data-src="' + (item.image?item.image:'"base_card2.png"') + ' alt="123" src="base_card2.png">'
+            + ' <div style="position:absolute;left:8%;top:10px;z-indent:2;">' + item.name + (item.type&&item.attack?'('+item.type + ',' + item.attack +')':'') + '</div>'
+            + ' <div style="position:absolute;left:8%;top:35px;width:100%;bottom:8%;z-indent:2;"><img style="width:84%;height:100%;z-indent:2;" src="' + (item.image?item.image:'') + '">'
+            + '   <div style="position:absolute;left:0px;top:0px;z-indent:2;"><img src="' + (item.icon?item.icon:'') + '"></div>'
+            + '   <div style="position:absolute;left:0px;bottom:0%;width:84%;z-indent:2;background-color:black">' + skill + '</div>'
+            + ' </div>'
+            + ' <div style="position:absolute;right:8%;width:60px;top:10px;z-indent:2;">' + (item.red&&item.blue?'♡' + item.red + ' ◇' + item.blue:'') + '</div>'
+            + '</a>'
+            + '</div>';
+        $("#content").append(html);
+    }
+});
+</script>
+</head>
+<body>
+<div class="row" id="content">
+  
+</div>
+</body>
+</html>
+
