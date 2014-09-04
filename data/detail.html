@@ -12,6 +12,8 @@ var heartArray = [
   "*",
   "*",
 ];
+var iconDir = "image/";
+var imageDir = "image/";
 var data = [
     {
       name : "奥林匹斯之王",
@@ -109,8 +111,8 @@ $(document).ready(function (){
             + '<a href="#" class="thumbnail">'
             + '<img data-src="' + (item.image?item.image:'"base_card2.png"') + ' alt="123" src="base_card2.png">'
             + ' <div style="position:absolute;left:8%;top:10px;z-indent:2;">' + item.name + (item.type&&item.attack?'('+item.type + ',' + item.attack +')':'') + '</div>'
-            + ' <div style="position:absolute;left:8%;top:35px;width:100%;bottom:8%;z-indent:2;"><img style="width:84%;height:100%;z-indent:2;" src="' + (item.image?item.image:'') + '">'
-            + '   <div style="position:absolute;left:0px;top:0px;z-indent:2;"><img src="' + (item.icon?item.icon:'') + '"></div>'
+            + ' <div style="position:absolute;left:8%;top:35px;width:100%;bottom:8%;z-indent:2;"><img style="width:84%;height:100%;z-indent:2;" src="' + (item.image?imageDir+item.image:'') + '">'
+            + '   <div style="position:absolute;left:0px;top:0px;z-indent:2;"><img src="' + (item.icon ? iconDir+item.icon:'') + '"></div>'
             + '   <div style="position:absolute;left:0px;bottom:0%;width:84%;z-indent:2;background-color:black">' + skill + '</div>'
             + ' </div>'
             + ' <div style="position:absolute;right:8%;width:60px;top:10px;z-indent:2;">' + (item.red&&item.blue?'♡' + item.red + ' ◇' + item.blue:'') + '</div>'
