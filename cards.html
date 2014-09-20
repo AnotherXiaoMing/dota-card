@@ -4,12 +4,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Dota-card</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/jquery-2.1.1.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <script src="javascripts/rule.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pygment_trac.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/respond.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<script>
+$(function (){
+    function getImage(image) {
+      return image?image:"images/base_card2.png";
+    }
+    function getHtml(item) {
+      return "<div class='col-xs-6 col-md-3'><a href='#' class='thumbnail'><img src='"
+      + getImage(item.image) + "' ><div class='caption'>" + item.name + "</div></a></div>";
+    }
+    for (var i = 0; i < RoleCards.length; ++i) {
+        $("#roleCards").append(getHtml(RoleCards[i]));
+    }
+    for (var i = 0; i < BloodCards.length; ++i) {
+        $("#bloodCards").append(getHtml(BloodCards[i]));
+    }
+    for (var i = 0; i < MagicCards.length; ++i) {
+        $("#magicCards").append(getHtml(MagicCards[i]));
+    }
+    for (var i = 0; i < PositionCards.length; ++i) {
+        $("#positionCards").append(getHtml(PositionCards[i]));
+    }
+    for (var i = 0; i < BasicCards.length; ++i) {
+        $("#basicCards").append(getHtml(BasicCards[i]));
+    }
+
+});
+</script>    
   </head>
   <body>
       <div id="header">
@@ -20,32 +50,35 @@
     <div class="wrapper">
       <section>
         <div id="title">
-          <h1>卡牌</h1>
+          <h1>纸牌</h1>
           <br/>
         </div>
         <h2>1 身份牌</h2>
+        <div id="roleCards" class="row"></div>
         <br/>
-        <p class="detail">
-        ...
-        </p>
         <br/>
         <h2>2 体力牌</h2>
+        <div id="bloodCards" class="row"></div>
         <p>
         </p>
         <br/>
         <h2>3 魔力牌</h2>
+        <div id="magicCards" class="row"></div>
         <p>
         </p>
         <br/>
         <h2>4 位置牌</h2>
+        <div id="positionCards" class="row"></div>
         <p>
         </p>
         <br/>
         <h2>5 基本牌</h2>
+        <div id="basicCards" class="row"></div>
         <p>
         </p>
         <br/>
         <h2>6 英雄牌</h2>
+        <div id="heroCards" class="row"></div>
         <p>
         </p>
         <br/>
