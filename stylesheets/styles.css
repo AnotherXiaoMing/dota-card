@@ -849,3 +849,9 @@ section #title .credits.right {
     display: none;
   }
 }
+
+.detail {
+  color: #eebb00;
+  font-weight: 400;
+  text-decoration: none;
+}
