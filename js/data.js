@@ -65,21 +65,35 @@ var PositionCards = [
 var BasicCards = [
   {
     name: "治疗药膏",
-    cost: 0,
+    cost: "0",
+    time: "1",
+    distance : "0",
     icon: "zhiliaoyaogao_icon.jpg",
-    image: "zhiliaoyaogao_icon.jpg",
-    desc: "恢复目标英雄1点体力"
+    desc: "恢复1点体力"
   },
   {
     name: "净化药水",
-    cost: 0,
-    image: "jinghuayaoshui_icon.jpg",
-    desc: "恢复目标英雄1点魔力"
+    cost: "0",
+    time: "1",
+    distance : "0",
+    icon: "jinghuayaoshui_icon.jpg",
+    desc: "恢复1点魔力"
+  },
+  {
+    name: "回城卷轴",
+    cost: "0",
+    time: "1",
+    distance : "-",
+    icon: "huichengjuanzhou_icon.gif",
+    desc: "下一回合前若为未被打断，回到起点，否则无效。"
   },
   {
     name: "速度之靴",
-    cost: 1,
-    image: "",
+    cost: "0",
+    trigger: "被",
+    time: "0",
+    distance : "-",
+    icon: "",
     desc: "增加1点移动范围"
   },
 ];
