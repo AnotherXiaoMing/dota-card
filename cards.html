@@ -16,11 +16,11 @@
 <script>
 $(function (){
     function getImage(image) {
-      return image?image:"images/base_card2.png";
+      return image? "images/"+image:"images/base_card2.png";
     }
     function getHtml(item) {
-      return "<div class='col-xs-6 col-md-3'><a href='#' class='thumbnail'><img src='"
-      + getImage(item.image) + "' ><div class='caption'>" + item.name + "</div></a></div>";
+      return "<div class='col-xs-6 col-md-3'><div class='thumbnail'><img width='120px' src='"
+      + getImage(item.image) + "' ><div class='caption'>" + item.name + (item.desc?"<p>"+item.desc+"</p>":"") + "</div></div></div>";
     }
     for (var i = 0; i < RoleCards.length; ++i) {
         $("#roleCards").append(getHtml(RoleCards[i]));
