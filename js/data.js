@@ -66,6 +66,7 @@ var BasicCards = [
   {
     name: "治疗药膏",
     cost: 0,
+    icon: "zhiliaoyaogao_icon.jpg",
     image: "zhiliaoyaogao_icon.jpg",
     desc: "恢复目标英雄1点体力"
   },

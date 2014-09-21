@@ -18,21 +18,47 @@ $(function (){
     function getImage(image) {
       return image? "images/"+image:"images/base_card2.png";
     }
+    function getIcon(icon) {
+      return icon? "images/"+icon:"images/base_card2.png";
+    }
+    function getImgHtml(item) {
+      return "<div class='col-xs-6 col-md-3'><div class='thumbnail'><img src='"
+      + getImage(item.image) + "' ><div class='caption'>" + item.name + "</div></div></div>";
+    }
     function getHtml(item) {
-      return "<div class='col-xs-6 col-md-3'><div class='thumbnail'><img width='120px' src='"
-      + getImage(item.image) + "' ><div class='caption'>" + item.name + (item.desc?"<p>"+item.desc+"</p>":"") + "</div></div></div>";
+//      return "<div class='col-xs-6 col-md-3'><div class='thumbnail'><img width='120px' src='"
+//      + getImage(item.image) + "' ><div class='caption'>" + item.name + (item.desc?"<p>"+item.desc+"</p>":"") + "</div></div></div>";
+      
+        var skill = "";
+        for (var sk in item.skill) {
+            if (skill) {
+                skill += '<br/>';
+            }
+            skill += '◆' + item.skill[sk];
+        }
+//"<div style="position:absolute;left:8%;top:10px;z-indent:2;">' + item.name + (item.type&&item.attack?'('+item.type + ',' + item.attack +')':'') + '</div>'         
+        var html 
+        = "<div class='col-xs-6 col-md-3'>"
+        + "  <div class='thumbnail'>"
+        + "    <img src='images/base_card2.png'>"
+        + "      <div style='position:absolute;left:0px;top:0px;z-indent:2;width:15%;'><img src='" + getIcon(item.icon) + "'/></div>"
+        + "      <div style='position:absolute;left:0px;bottom:0%;width:84%;z-indent:2;background-color:black'>" + skill + "</div>"
+        + "    </img>"
+        + "  </div>"
+        + "</div>";
+        return html;
     }
     for (var i = 0; i < RoleCards.length; ++i) {
-        $("#roleCards").append(getHtml(RoleCards[i]));
+        $("#roleCards").append(getImgHtml(RoleCards[i]));
     }
     for (var i = 0; i < BloodCards.length; ++i) {
-        $("#bloodCards").append(getHtml(BloodCards[i]));
+        $("#bloodCards").append(getImgHtml(BloodCards[i]));
     }
     for (var i = 0; i < MagicCards.length; ++i) {
-        $("#magicCards").append(getHtml(MagicCards[i]));
+        $("#magicCards").append(getImgHtml(MagicCards[i]));
     }
     for (var i = 0; i < PositionCards.length; ++i) {
-        $("#positionCards").append(getHtml(PositionCards[i]));
+        $("#positionCards").append(getImgHtml(PositionCards[i]));
     }
     for (var i = 0; i < BasicCards.length; ++i) {
         $("#basicCards").append(getHtml(BasicCards[i]));
