@@ -90,12 +90,107 @@ var BasicCards = [
   {
     name: "速度之靴",
     cost: "0",
-    trigger: "被",
     time: "0",
     distance : "-",
-    icon: "",
-    desc: "增加1点移动范围"
+    icon: "suduzhixue_icon.png",
+    desc: "移动范围+1"
   },
+  {
+    name: "哨岗守卫",
+    cost: "0",
+    time: "0",
+    distance : "1",
+    icon: "shaogangshouwei_icon.gif ",
+    desc: "距离范围内敌方英雄隐身无效"
+  },
+  {
+    name: "显隐之尘",
+    cost: "0",
+    time: "0",
+    distance : "1",
+    icon: "xianyinzhichen_icon.gif ",
+    desc: "距离范围内敌方英雄处于显隐状态"
+  },
+  {
+    name: "加速手套",
+    cost: "0",
+    time: "0",
+    distance : "-",
+    icon: "jiasushoutao_icon.gif ",
+    desc: "攻击时间-1"
+  },
+  {
+    name: "假腿",
+    cost: "1",
+    time: "0",
+    distance : "-",
+    icon: "jiatui_icon.gif ",
+    desc: "移动范围+1,攻击时间-1"
+  },
+  {
+    name: "相位鞋",
+    cost: "1",
+    time: "0",
+    distance : "-",
+    icon: "xiangweixie_icon.gif ",
+    desc: "移动范围+2"
+  },
+  {
+    name: "远行鞋",
+    cost: "1",
+    time: "0",
+    distance : "-",
+    icon: "yuanxingxie_icon.gif ",
+    desc: "移动范围+2,可以回城"
+  },
+  {
+    name: "力量手套",
+    cost: "0",
+    time: "0",
+    distance : "-",
+    icon: "liliangshoutao_icon.gif ",
+    desc: "恢复1点体力"
+  },
+  {
+    name: "力量腰带",
+    cost: "1",
+    time: "0",
+    distance : "-",
+    icon: "liliangyaodai_icon.gif ",
+    desc: "恢复2点体力"
+  },
+  {
+    name: "力量之斧",
+    cost: "2",
+    time: "0",
+    distance : "-",
+    icon: "liliangzhifu_icon.gif ",
+    desc: "恢复3点体力"
+  },
+  {
+    name: "智力斗篷",
+    cost: "0",
+    time: "0",
+    distance : "-",
+    icon: "zhilidoupeng_icon.gif ",
+    desc: "恢复1点魔力"
+  },
+  {
+    name: "法师长袍",
+    cost: "1",
+    time: "0",
+    distance : "-",
+    icon: "fashichangpao_icon.gif ",
+    desc: "恢复2点魔力"
+  },
+  {
+    name: "魔力法杖",
+    cost: "2",
+    time: "0",
+    distance : "-",
+    icon: "molifazhang_icon.gif ",
+    desc: "恢复3点魔力"
+  },    
 ];
 
 var CardSet = [
