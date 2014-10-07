@@ -22,13 +22,26 @@ $(function (){
       return icon? "images/"+icon:"images/x.png";
     }
     function getImgHtml(item) {
-      return "<div class='col-xs-6 col-md-3'><div class='thumbnail'><img src='"
+      return "<div class='col-xs-12 col-md-6'><div class='thumbnail'><img src='"
       + getImage(item.image) + "' ><div class='caption'>" + item.name + "</div></div></div>";
     }
     function getHtml(item) {
-//      return "<div class='col-xs-6 col-md-3'><div class='thumbnail'><img width='120px' src='"
-//      + getImage(item.image) + "' ><div class='caption'>" + item.name + (item.desc?"<p>"+item.desc+"</p>":"") + "</div></div></div>";
-      
+        var html 
+        = "<div class='col-xs-12 col-md-6'>"
+        + "  <div class='thumbnail' style='width:240px;height:372px;background:#8888FF'>"
+        + "    <img src='" + getIcon(item.icon) + "'/>"
+        + "    <div class='caption'>"
+        + "      <p class='text-center'>" + item.name + "</p><br/><br/><br/><br/><br/><br/>"
+        + "      <small class='text-left'>$" 
+        +        item.cost 
+        + "      </small><br/>"
+        + "      <small class='text-left'>" + item.desc + "</small>"
+        + "    </div>"
+        + "  </div>"
+        + "</div>";
+        return html;
+    }
+     function getHeroHtml(item) {
         var skill = "";
         for (var sk in item.skill) {
             if (skill) {
@@ -36,17 +49,13 @@ $(function (){
             }
             skill += '◆' + item.skill[sk];
         }
-//"<div style="position:absolute;left:8%;top:10px;z-indent:2;">' + item.name + (item.type&&item.attack?'('+item.type + ',' + item.attack +')':'') + '</div>'         
         var html 
-        = "<div class='col-xs-6 col-md-3'>"
-        + "  <div class='thumbnail' style='width:120px;height:186px;background:#8888FF'>"
+        = "<div class='col-xs-12 col-md-6'>"
+        + "  <div class='thumbnail' style='width:240px;height:372px;background:#8888FF'>"
         + "    <img src='" + getIcon(item.icon) + "'/>"
         + "    <div class='caption'>"
         + "      <p class='text-center'>" + item.name + "</p>"
-        + "      <small class='text-left'>$" 
-        +        item.cost + "/距离" + item.distance + "/时间" + item.time 
-        + "      </small><br/>"
-        + "      <small class='text-left'>" + item.desc + "</small>"
+        + "      <small class='text-left'>" + skill + "</small>"
         + "    </div>"
         + "  </div>"
         + "</div>";
@@ -66,6 +75,9 @@ $(function (){
     }
     for (var i = 0; i < BasicCards.length; ++i) {
         $("#basicCards").append(getHtml(BasicCards[i]));
+    }
+    for (var i = 0; i < HeroCards.length; ++i) {
+        $("#heroCards").append(getHeroHtml(HeroCards[i]));
     }
 
 });
